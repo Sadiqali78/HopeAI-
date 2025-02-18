@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+{% load static %}
+<div class="jumbotron">
+    <h1>Heart attack prediction </h1>
+    <div class="fieldWrapper">
+      <h2>For the values</h2>
+      <p>Age:{{data_age}}</p>
+      <p>Chest Pain Type:{{data_cp}}</p>
+      <p>Maximum Heart Rate Achieved:{{data_thalach}}</p>
+      <p>Exercise Induced Angina:{{data_exang}}</p>
+      <p>ST Depression Induced by Exercise:{{data_oldpeak}}</p>
+      <p>Number of Major Vessels:{{data_ca}}</p>
+      <br>
+      {% if out == 1 %}
+        <p>You <b>will have</b>  Heart attack in the future: <b>Positive</b></p>
+      {% else %}
+        <p>You <b>will not</b> have Heart attack in the future:<b>Negetive</b></p>
+
+      {% endif %}
+    
+    <a  href="{% url 'ckdApp:ckd' %}">CKD Predicition</a>
+    <br>
+</div>
+{% endblock %}
